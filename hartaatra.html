@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Lushnja:kulturat-traditat-historia</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-villa-agency.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+TemplateMo 591 villa agency
+
+https://templatemo.com/tm-591-villa-agency
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+ 
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <img src="logoo.jpg" alt=""></img>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li><a style="font-size:10px" href="index.html" class="active">KREU</a></li>
+                      <li><a style="font-size: 10px;" href="hartaatra.html">ATRAKSIONET TURISTIKE</a></li>
+                      <li><a style="font-size: 10px;" href="audioguide.html">AUDIOGUIDE</a></li>
+                      <li><a style="font-size: 10px;" href="kalendari.html">KALENDARI</a></li>
+                       <li><a style="font-size: 10px;" href="hart.html">HARTA</a></li>
+                       <li><a style="font-size: 10px;" href="revist.html">REVISTA</a></li>
+                      <li><a style="font-size: 10px;" href="komente.html">KOMENTE</a></li>
+                     
+                      <li style="display: none;"><a href=""></a>■■</li>
+                     
+                     <!--  
+                      <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
+                      <!--  -->
+                  </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        
+      <!-- stilizmi atraksioneve -->
+      
+      * {
+  box-sizing: border-box;
+  margin: 0;
+  padding 0;
+  }
+        /* Stili bazë për seksionin */
+.atraksionet-seksioni {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    
+}
+
+.atraksioni {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.atraksioni:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.atraksioni-titulli {
+    background-color: black;
+    color: #fff;
+    padding: 15px;
+    margin: 0;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.atraksioni-titulli:hover {
+    background-color: #f35525;
+}
+
+.atraksioni-permbajtja {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.atraksioni-permbajtja.aktiv {
+    max-height: 1000px; /* Kjo vlerë do të ndryshohet nga JavaScript */
+}
+
+
+
+.atraksioni-permbajtja {
+    max-height: 300px; /* Lartësia maksimale për të aktivizuar scroll */
+    overflow: auto; /* Lejo scroll nëse përmbajtja tejkalon lartësinë */
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+
+.atraksioni-permbajtja {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0; /* Sigurohuni që të mos ketë padding në gjendjen fillestare */
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.atraksioni-permbajtja.aktiv {
+    max-height: 300px; /* Lartësia maksimale për të aktivizuar scroll */
+    padding: 20px; /* Shto padding vetëm kur përmbajtja është e hapur */
+    overflow: auto; /* Lejo scroll */
+}
+
+
+<!-- Fundi stilizimit te atraksioneve -->
+
+<!-- SHTEPIA E KONGRESIT -->
+  .foto-seksioni {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.foto-seksioni h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* Stili për foto kryesore */
+.foto-kryesore {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.foto-kryesore-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.info-kryesore {
+    text-align: center;
+}
+
+.info-kryesore h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.info-kryesore p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.butoni {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.butoni:hover {
+    background-color: #0056b3;
+}
+
+/* Stili për foto të tjera */
+.foto-te-tjera {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.foto-karte {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.foto-karte:hover {
+    transform: translateY(-5px);
+}
+
+.foto-karte img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.foto-karte h3 {
+    font-size: 1.5rem;
+    margin: 15px 10px;
+    color: #333;
+}
+
+.foto-karte p {
+    font-size: 1rem;
+    margin: 0 10px 15px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .foto-seksioni h1 {
+        font-size: 2rem;
+    }
+
+    .info-kryesore h2 {
+        font-size: 1.5rem;
+    }
+
+    .foto-kryesore {
+        flex-direction: column;
+    }
+
+    .foto-te-tjera {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .foto-seksioni h1 {
+        font-size: 1.8rem;
+    }
+
+    .info-kryesore h2 {
+        font-size: 1.3rem;
+    }
+
+    .foto-te-tjera {
+        grid-template-columns: 1fr;
+    }
+}
+<!-- FUNDI SHTEPIA KONGRESIT -->
+
+
+
+<!-- MUZEU HISTORIK -->
+/* Stili për seksionin e muzeut */
+.muzeu-seksioni {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+  
+}
+
+.muzeu-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.muzeu-header h1 {
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.muzeu-header p {
+    font-size: 1.2rem;
+    color: #555;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Stili për ekspozitat */
+.muzeu-kontenti {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.ekspozita {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ekspozita:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.ekspozita-foto {
+    flex: 1;
+    max-width: 40%;
+    position: relative;
+    overflow: hidden;
+}
+
+.foto-arte {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.ekspozita-foto:hover .foto-arte {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.ekspozita-foto:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 1rem;
+}
+
+.ekspozita-info {
+    flex: 2;
+    padding: 20px;
+}
+
+.ekspozita-info h2 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.ekspozita-info .rubrika {
+    font-size: 1rem;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ekspozita-info p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.butoni {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.butoni:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Animacione */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+
+
+@media (max-width: 768px) {
+    .ekspozita {
+        flex-direction: column;
+    }
+
+    .ekspozita-foto {
+        max-width: 100%;
+    }
+
+    .ekspozita-info {
+        padding: 15px;
+    }
+
+    .ekspozita-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .ekspozita-info p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .muzeu-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .muzeu-header p {
+        font-size: 1rem;
+    }
+
+    .ekspozita-info h2 {
+        font-size: 1.5rem;
+    }
+}
+
+<!-- FUNDI MUZEU HISTORIK -->
+
+<!-- MANASTIRI I ARDENICES -->
+/* Stili për seksionin e Ardenicës */
+.ardenica-seksioni {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.ardenica-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ardenica-header h1 {
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.ardenica-header p {
+    font-size: 1.2rem;
+    color: #555;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Stili për navigimin */
+.navigimi {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.navigimi-butoni {
+    padding: 10px 20px;
+    background-color: black;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navigimi-butoni.aktiv {
+    background-color: #f35525;
+}
+
+.navigimi-butoni:hover {
+    background-color: #f35525;
+    transform: translateY(-3px);
+}
+
+/* Stili për pjesën e informacionit */
+.ardenica-kontenti {
+    position: relative;
+}
+
+.info-pjesa {
+    display: none;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.info-pjesa.aktiv {
+    display: block;
+}
+
+.info-pjesa h2 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.info-pjesa p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.info-pjesa img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Animacione */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navigimi {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigimi-butoni {
+        width: 100%;
+        text-align: center;
+    }
+
+    .ardenica-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .ardenica-header p {
+        font-size: 1rem;
+    }
+
+    .info-pjesa h2 {
+        font-size: 1.8rem;
+    }
+
+    .info-pjesa p {
+        font-size: 1rem;
+    }
+}
+
+<!-- FUNDI I MANASTIRI I ARDENICED -->
+
+
+
+<!-- Liqenet -->
+       /* Stili për seksionin */
+        #udhetim-liqeneve {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        #udhetim-liqeneve h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #udhetim-liqeneve button {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        #udhetim-liqeneve button:hover {
+            background-color: #f35525;
+        }
+
+        #info-liqeni {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+        }
+
+        #info-liqeni img {
+            width: 300px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        #info-liqeni p {
+            font-size: 30px;
+            color: #34495e;
+            font-weight: bold;
+        }
+<!-- Fundi Liqeneve -->
+
+
+<!-- Kishat Historike -->
+/* Stili për seksionin e kishave */
+.kishat-seksioni {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    
+}
+
+.kishat-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.kishat-header h1 {
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.kishat-header p {
+    font-size: 1.2rem;
+    color: #555;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Stili për navigimin */
+.kishat-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.kisha-nav-btn {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.kisha-nav-btn.aktiv {
+    background-color: #f35525;
+}
+
+.kisha-nav-btn:hover {
+    background-color: #f35525;
+    transform: translateY(-3px);
+}
+
+/* Stili për pjesën e informacionit dhe fotove */
+.kishat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.kisha-info {
+    display: none;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.kisha-info.aktiv {
+    display: flex;
+}
+
+.kisha-foto {
+    flex: 1;
+    max-width: 40%;
+}
+
+.kisha-foto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.kisha-detalje {
+    flex: 2;
+}
+
+.kisha-detalje h2 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.kisha-detalje p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.kisha-detalje ul {
+    list-style-type: none;
+}
+
+.kisha-detalje ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Animacione */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .kishat-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kisha-nav-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .kisha-info {
+        flex-direction: column;
+    }
+
+    .kisha-foto {
+        max-width: 100%;
+    }
+
+    .kishat-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .kishat-header p {
+        font-size: 1rem;
+    }
+
+    .kisha-detalje h2 {
+        font-size: 1.8rem;
+    }
+
+    .kisha-detalje p {
+        font-size: 1rem;
+    }
+}
+
+
+<!-- Fundi kishat Historike -->
+
+
+/* Stili për seksionin e Parkut të Karavastasë */
+.parku-karavasta {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    
+}
+
+.parku-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.parku-header h1 {
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.parku-foto {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Stili për menunë e butonave */
+.parku-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Butonat të kthehen në rresht të ri në ekran të vegjël */
+}
+
+.menu-btn {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
+}
+
+.menu-btn.aktiv {
+    background-color: #f35525;
+}
+
+.menu-btn:hover {
+    background-color: #f35525;
+    transform: translateY(-3px);
+}
+
+/* Stili për pjesën e informacionit */
+.parku-pjesa {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.parku-info {
+    display: none;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.parku-info.aktiv {
+    display: block;
+}
+
+.parku-info h2 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.parku-info p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.parku-info img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Animacione */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .parku-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .parku-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .menu-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .parku-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .parku-info p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .parku-header h1 {
+        font-size: 2rem;
+    }
+
+    .menu-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .parku-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .parku-info p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+    </style>
+       
+
+    <meta charset="UTF-8">
+    <title>Lushnja:kulturat-traditat-historia</title>
+</head>
+<body>
+    <br><br>
+    <h1 style="text-align: center;">HARTA E ATRAKSIONEVE TURISTIKE</h1>
+    <br>
+
+    <div class="atraksioni">
+        <h2 class="atraksioni-titulli">Atraksioni 1: Shtëpia e Kongresit të Lushnjës</h2>
+        
+        <div class="atraksioni-permbajtja">
+            <section class="foto-seksioni">
+        <h1>Kongresi i Lushnjës</h1>
+        <div class="foto-kryesore">
+            <img src="assets/images/banner-02.jpg" alt="Foto Kryesore" class="foto-kryesore-img">
+            <div class="info-kryesore">
+                <h2>Shtëpia e Kongresit</h2>
+                <p style="text-align: justify; margin: 0; padding: 0;> Muzeu i "Kongresit të Lushnjës" është një institucion kulturor që fillimisht u hap si Shtëpi Muze në vitin 1960. Ndodhet në qytetin e Lushnjës dhe është vendosur në një ndërtesë që ka një rëndësi të veçantë historike, pasi në këtë ndërtesë u zhvillua Kongresi i Lushnjës nga data 21 deri më 31 Janar 1920.
+<br>
+Kongresi i Lushnjës ishte një ngjarje e rëndësishme për historinë e Shqipërisë, ku u morën vendime të kryesishme për të ardhmen e vendit pas Luftës së Parë Botërore. Në këtë kongres, përfaqësuesit e qeverisë së Përkohshme të Shqipërisë dhe atdhetarë të tjerë u mblodhën për të diskutuar dhe miratuar një sërë masash që ndikuan në formimin e shtetit shqiptar modern.
+<br>
+Shtëpia muze e Kongresit të Lushnjës ofron një shëtitje të ngjarjes historike të këtij kongresi. Ekspozitat dhe materialet e paraqitura shpalosin detaje të rëndësishme mbi takimet, diskutimet dhe vendimet që u morën në këtë periudhë kritike për historinë e Shqipërisë.
+<br>
+Përveç kësaj, në muze janë prezantuar edhe dokumente origjinale, fotografi dhe objekte të tjera të cilat ndihmojnë në kuptimin e thellë të kontekstit historik dhe politik të kohës së Kongresit të Lushnjës.
+<br>
+Muzeu i "Kongresit të Lushnjës" është një destinacion i rëndësishëm për ata që duan të mësojnë më shumë për periudhën e pasluftës dhe zhvillimet që ndodhën në Shqipëri në fillimin e shekullit të kaluar. Nëpërmjet ekspozitave dhe materialeve informative, vizitorët mund të njihen më mirë me historinë dhe trashëgiminë e vendit.</p>
+                
+            </div>
+        </div>
+        <div class="foto-te-tjera">
+            <div class="foto-karte">
+                <img src="assets/images/foto2.jpg" alt="Foto 2">
+                
+            </div>
+            <div class="foto-karte">
+                <img src="assets/images/foto3.jpg" alt="Foto 3">
+                
+                
+            </div>
+            <div class="foto-karte">
+                <img src="assets/images/foto4.jpg" alt="Foto 4">
+               
+            </div>
+        </div>
+    </section>
+            
+            
+    </div>
+    </div>
+
+    <!-- Atraksioni 2 -->
+    <div class="atraksioni">
+        <h2 class="atraksioni-titulli">Atraksioni 2: Muzeu Historik Lushnjë</h2>
+        <div class="atraksioni-permbajtja">
+            <section class="muzeu-seksioni">
+        <div class="muzeu-header">
+            <h1>Muzeu Historik</h1>
+            <br><br>
+            <div class="foto-kryesore">
+            <img src="assets/images/muzeuu.jpg" alt="" style="border-radius: 50px;">
+            </div>
+            <br><br><br>
+            <p style="text-align: justify; margin: 0; padding: 0;">
+
+Muzeu Historik Lushnjë është një institucion kulturor i rëndësishëm në qytetin e Lushnjës, i cili konservon dhe ekspozon një gamë të gjerë të objekteve të rëndësishme historike dhe kulturore. Me rreth 200 objekte në koleksionin e tij, ky muze ofron një udhëtim të pasur nëpër historinë dhe kulturën e zonës së Lushnjës dhe më gjerë.
+<br>
+Në Muzeun Historik Lushnjë, vizitorët mund të zbulojnë një informacion të përgjithshëm rreth objekteve arkeologjike që janë zbuluar në territorin e Lushnjes. Kjo përfshin artefakte dhe gjurme të kulturave të ndryshme që kanë jetuar dhe lënë ndikimin e tyre në këtë rajon, duke e bërë atë një vend të rëndësishëm arkeologjik në historinë e Shqipërisë.
+<br>
+Gjithashtu, muzeu përmban një koleksion të pasur të objekteve etnografike, të cilat përfaqësojnë traditat, kulturën materiale dhe jetën e zakonshme të banorëve të kësaj zone nëpër shekuj. Këto objekte ofrojnë një pamje të qartë të jetës së përditshme dhe traditave të trashëgimisë kulturore të këtij vendi.
+<br>
+Në sallat e tij, Muzeu Historik Lushnjë gjithashtu shfaq një koleksion të mjaftueshëm të fotografive të periudhave të Luftës së Parë dhe të Dytë Botërore. Këto fotografi ofrojnë një ndriçim në ngjarjet historike dhe ndikimin e tyre në komunitetin lokal, duke përforcuar të kuptuarit e historisë së këtij vendi dhe  kujtesën e ngjarjeve të rëndësishme botërore.</p>
+        </div>
+        <div class="muzeu-kontenti">
+            <!-- Ekspozita 1 -->
+            <div class="ekspozita">
+                <div class="ekspozita-foto">
+                    <img src="assets/images/paleolit.jpg" alt="Artefakt 1" class="foto-arte">
+                    <br>
+                    <img src="assets/images/neolit.jpg" alt="Artefakt 1" class="foto-arte">
+                    
+                    <div class="overlay">
+                        <h3>Periudhat</h3>
+                      
+                    </div>
+                </div>
+                <div class="ekspozita-info">
+                    <h2>Periudhat: Paleolit, Mezeolit, Neolit</h2>
+                  
+                    <p>1. Paleoliti (Epoka e Gurit të Vjetër) – rreth 100,000 – 10,000 p.e.s
+<br>
+Kjo periudhë përfshin zhvillimin e parë të njerëzimit në territorin e Shqipërisë.
+<br>
+Gjetjet më të rëndësishme janë në shpellat e Xarës (Sarandë), Konispolit, Treni (Devoll), dhe Kryegjatës (Mallakastër).
+<br>
+Banorët ishin kryesisht gjuetarë dhe mbledhës frutash, duke përdorur vegla prej guri të latuar.
+<br>
+Kanë ekzistuar vendbanime kryesisht në shpella dhe zona të mbrojtura natyrore.
+<br><br>
+
+2. Mezoliti (Epoka e Gurit të Mesëm) – rreth 10,000 – 7,000 p.e.s
+<br>
+Kjo periudhë përfaqëson kalimin nga jeta nomade drejt vendbanimeve më të qëndrueshme.
+<br>
+Në Shqipëri, gjurmët e kësaj epoke janë më të pakta, por ka dëshmi se veglat e guri filluan të përpunoheshin më mirë.
+<br>
+Banorët filluan të përdorin teknika më të avancuara për gjueti dhe peshkim.
+<br>
+Periudha e Mezolitit shënon fillimin e kalimit drejt bujqësisë dhe blegtorisë.
+<br><br>
+
+3. Neoliti (Epoka e Gurit të Ri) – rreth 7,000 – 3,000 p.e.s
+<br>
+Periudha e Neolitit karakterizohet nga zhvillimi i bujqësisë dhe blegtorisë, duke çuar në krijimin e vendbanimeve të përhershme.
+<br>
+Gjetjet më të rëndësishme arkeologjike për këtë periudhë janë në Maliqin, Cakranin (Fier), Vashtemin (Korçë) dhe Blazën (Mat).
+<br>
+Fillon prodhimi i enëve prej balte dhe përdorimi i teknikave më të përparuara për përpunimin e gurit dhe kockave.
+<br>
+Kultura e Maliqit është një nga më të rëndësishmet e kësaj periudhe në Ballkan, duke treguar ndikime nga kultura të tjera mesdhetare dhe ballkanike.</p>
+                   
+                </div>
+            </div>
+
+            <!-- Ekspozita 2 -->
+            <div class="ekspozita">
+                <div class="ekspozita-foto">
+                       <img src="assets/images/iliri.JPG" alt="Artefakt 1" class="foto-arte">
+                    <br>
+                    <img src="assets/images/iliri2.jpg" alt="Artefakt 1" class="foto-arte">
+                    <div class="overlay">
+                        <h3>Qytetërimet Ilire</h3>
+                        
+                    </div>
+                </div>
+                <div class="ekspozita-info">
+                    <h2>Qytetërimet Ilire</h2>
+                    
+                    <p>Qytetërimet ilire ishin një grup fisesh të lashta që jetonin në Ballkanin Perëndimor, kryesisht në territoret e sotme të Shqipërisë, Kosovës, Malit të Zi, Bosnjë-Hercegovinës, Kroacisë, Serbisë dhe Maqedonisë së Veriut. Ata u zhvilluan nga epoka e bronzit deri në pushtimin romak në shekullin II p.e.s.<br>
+
+1. Origjina dhe Shtrirja
+<br>
+Ilirët ishin një popull indoeuropian që u shfaq në Ballkan që në mijëvjeçarin e dytë p.e.s.
+<br>
+Fiset ilire ishin të shumta, si Taulantët, Ardianët, Dardanët, Labeatët dhe Autariatët.
+<br>
+Kryeqendrat e tyre përfshinin Shkodrën, Rhizonin (Risanin), Byllisin, Dyrrahun (Durrësin) dhe Skupin (Shkupin).
+<br>
+
+2. Organizimi Politik dhe Shoqëror
+<br>
+Fillimisht u organizuan në fise të pavarura, por më vonë krijuan mbretëri të fuqishme si ajo e Ardianëve dhe Dardanëve.
+<br>
+Mbretëria Ardiane nën sundimin e Agronit dhe Teutës luftoi kundër Romës në shekullin III p.e.s.
+<br>
+Dardanët kishin një organizim të fuqishëm dhe zhvillim ekonomik të rëndësishëm.
+
+<br>
+3. Ekonomia dhe Kultura
+<br>
+Ilirët ishin kryesisht blegtorë dhe bujq, por njiheshin edhe si detarë dhe tregtarë të zotë.
+<br>
+Ata kishin një kulturë të pasur artizanale, duke prodhuar enë qeramike, armë dhe stoli të sofistikuara.
+<br>
+Arkitektura e tyre përfshinte qytete të fortifikuara me mure guri (kalatë ilire).
+<br>
+
+4. Feja dhe Besimet
+<br>
+Ilirët adhuronin natyrën dhe kishin perëndi të shumta, si Bindusi (perëndi e ujërave) dhe Anzotiku.
+<br>
+Kulti i gjarprit ishte i përhapur në mesin e tyre.
+
+<br>
+5. Marrëdhëniet me Romën dhe Pushtimi Romak
+<br>
+Ilirët luftuan disa herë kundër Romës në Iliricum Wars (Luftërat Ilire) midis shekullit III dhe II p.e.s.
+<br>
+Pas disfatës së Teutës dhe Gentit, ilirët u pushtuan gradualisht nga romakët, duke u përfshirë në Perandorinë Romake.
+<br>
+
+6. Trashëgimia
+<br>
+Ilirët konsiderohen si paraardhësit kryesorë të shqiptarëve.
+<br>
+Disa nga figurat më të njohura me origjinë ilire përfshijnë perandorë romakë si Diokleciani dhe Konstantini i Madh.
+<br>
+Gjuha ilire nuk ka mbijetuar, por disa elementë besohet se kanë kaluar në shqipen e sotme.
+
+<br>
+Ilirët luajtën një rol të rëndësishëm në historinë e Ballkanit dhe ndikimi i tyre ende shihet në kulturën dhe gjuhën e rajonit.
+
+</p>
+                  
+                </div>
+            </div>
+
+        </div>
+    </section>
+  
+        </div>
+    </div>
+
+    <!-- Atraksioni 3 -->
+    <div class="atraksioni">
+        <h2 class="atraksioni-titulli">Atraksioni 3: Manastiri i Ardenicës</h2>
+        <div class="atraksioni-permbajtja">
+             <section class="ardenica-seksioni">
+        <div class="ardenica-header">
+            <h1>Manastiri i Ardenicës</h1>
+            <br><br>
+            <div class="foto-kryesore">
+             <img style="border-radius: 50px; padding: 50px" src="assets/images/banner-03.jpg" alt="Artefakt 1">
+             </div>
+          
+        </div>
+
+        <!-- Pjesa e Navigimit -->
+        <div class="navigimi">
+            <button style="color: white; font-weight: bold;" class="navigimi-butoni aktiv" data-target="historia">Historia</button>
+            <button style="color: white; font-weight: bold;" class="navigimi-butoni" data-target="arkitektura">Arkitektura</button>
+            <button style="color: white; font-weight: bold;" class="navigimi-butoni" data-target="turizmi">Vend Turistik</button>
+        </div>
+
+        <!-- Pjesa e Përmbajtjes -->
+        <div class="ardenica-kontenti">
+            <!-- Historia -->
+            <div id="historia" class="info-pjesa aktiv">
+                <h2>Historia e Manastirit</h2>
+                <p>Mendohet se themelet e këtij manastiri janë hedhur në vitin 1282 me nismën e perandorit Andronik II Paleolog të Bizantit, i cili e ngriti këtë tempull pas fitores mbi anzhuinët në Berat. Shtysë për këtë veprim do të jetë bërë ndodhja në atë vend e kapelës së Shën Triadhës, e ngritur aty shekuj më parë. Ekziston hipoteza se kapela mund të jetë ndërtuar në themelet gërmadhë të një tempulli pagan, i cili ka qenë ndërtuar për nder të hyjneshës Artemisa nga ka rrjedhur dhe emri i sotëm Ardenica. Fare pranë këtij tempulli, në rrethinat e të cilit sot ndodhet manastiri, kalonte dega jugore e rrugës antike Egnatia, pikërisht 1 km në perëndim të tij. Për rreth manastirit shikohen, aty-këtu, ndërtime të vjetra, të cilat të japin mendimin se rreth tij ka pasur ndoshta një qendër të banuar. Sipas defterit osman të vitit 1431-'32, në nahijen e Myzeqesë, ndodhej fshati Ardenicë me tetë shtëpi, i cili mund të jetë shtrirë për rreth manastirit. Dëshmi tjetër, për rëndësinë e këtij manastiri është dhe fakti që po zë një vend gjithnjë e më të rëndësishëm në historinë e Shqipërisë, se në altarin e Kishës së manastirit të Ardenicës, është bërë edhe kurorëzimi i martesës së heroit tonë kombëtar, Gjergj Kastrioti me Andronika Arianitin. Ceremoniali u bë në mesditën e 21 prillit 1451 nga peshkopi i Kaninës Feliks, në prani të princave shqiptarë dhe ambasadorëve të Napolit, Venedikut, Raguzës. Këtë fakt e përmend për herë të parë në vitin 1940, italiani A. Lorenconi. </p>
+                <img src="assets/images/historia.jpg" alt="Historia e Manastirit">
+            </div>
+
+            <!-- Arkitektura -->
+            <div id="arkitektura" class="info-pjesa">
+                <h2>Arkitektura e Manastirit</h2>
+                <p>Manastiri është i tipit bizantino-ortodoks. Ai, së bashku me konaket që i janë shtuar më vonë, zë një sipërfaqe prej 2.500 m2. Ky monument përbëhet nga kisha e Shën Mërisë, kapela e Shën Triadhës, konaket, mulliri vajit, furra, stalla, etj. Në qendër të tij ndodhet kisha "Lindja e Shën Mërisë", e cila është ndërtuar pjesërisht me gurë të sjellë nga Apollonia dhe gurë shtufi. Kisha është e tipit Bazilikal. Ajo zë një vëllim të madh dhe është e mbuluar nga një çati druri me tavan të rrafshët. Mjediset që përbëjnë këtë kishë janë: naosi, narteksi, egzonarteksi dykatësh, ku në fund u bashkëngjitet kambanorja e lartë 24 m. Në anën jugore ndodhet portiku i hapur i ndërtuar me kolona dhe harqe. Naosi përbëhehet nga tre pjesë, të cilat ndahen në dy rreshta kolonash prej druri. Naosi ndahet nga altari me anë të ikonostasit. Dyshemeja e kishës është shtruar me pllaka guri, e cila përfshin edhe ambientet e narteksit dhe egzonarteksit.
+Në vitin 1743 me nismën e peshkopit të Beratit, Metodit, i cili ishte me origjinë nga Bubullima (Myzeqe), u bënë në këtë manastir punime rregulluese përfshirë edhe kishën e Shën Mërisë. Kapela e Shën Triadhës shtrihet në pjesën verilindore të manastirit dhe ka përmasa 7,50 m x 3,70 m.
+Hyrja e saj është në anën perëndimore dhe është e pajisur me dy dritare të vogla në faqen jugore. Kjo kapelë është ndërtuar me gurë shtufi dhe është e pajisur me një hapësirë, muri gjysmërrethor i së cilës e ndan atë nga një sternë uji. Porta e kapeles është mbuluar me harkë guri, pranë dritares lindore të saj ndodhet edhe një reliev qeramike.
+</p>
+                <img src="assets/images/arkitektura.jpg" alt="Arkitektura e Manastirit">
+            </div>
+
+            <!-- Vend Turistik -->
+            <div id="turizmi" class="info-pjesa">
+                <h2>Vend Turistik</h2>
+                <p>Kodrat e Ardenicës ndodhen në jug të fushës së Myzeqesë së madhe me një pozitë dominuese që shihet nga të gjitha anët me një lartësi 237m mbi nivelin e detit. Kjo pozitë si ballkon, ku nga këmbanorja e tij shihen Kruja, mali i Dajtit, Tomorri, deti Adriatik, laguna e Kravastasë e deri në jug malet e Labërisë, e bëjnë Ardenicën një vend të vizituar nga turizmi shplodhës dhe argëtues, vlerat e të cilit ia shton edhe pylli halor dhe ullishtat që ndodhen në bregoret për rreth manastirit. Gjithashtu vlerat që zotëron ky tempull, për të cilat folëm më sipër, e bëjnë atë një nga qendrat më tërheqëse të turizmit studimor. Në këtë drejtim ndikon dhe fakti që pellgu i Myzeqesë, në sajë të pozitës kyçe dhe të privilegjuar ka pasur gjithmonë një nivel të lartë zhvillimi ekonomiko-kulturor. Dëshmi për këtë janë një sërë manastiresh të mesjetës së hershme si forma refleksesh të këtij zhvillimi. I tillë ka qenë dhe mbetet edhe manastiri "Lindja e Shën Mërisë" së Ardenicës.</p>
+                <img src="assets/images/turistik.jpg" alt="Vend Turistik">
+            </div>
+        </div>
+   </section>
+    </div>
+    </div>
+    
+   
+    <!-- LIQENET -->
+     <!-- Atraksioni 4-->
+    <div class="atraksioni">
+        <h2 class="atraksioni-titulli">Atraksioni 4: Liqenet</h2>
+        <div class="atraksioni-permbajtja">
+         <section id="udhetim-liqeneve">
+        <h2>Një udhëtim përmes liqeneve</h2>
+        <div>
+            <button onclick="shfaqInfo('kashare')">Liqeni i Kasharajt</button>
+            <button onclick="shfaqInfo('gjyshaj')">Liqeni Gjyshaj</button>
+            <button onclick="shfaqInfo('ohrid')">Liqeni Kupas</button>
+        </div>
+
+        <div id="info-liqeni">
+            <!-- Këtu do të shfaqet informacioni dhe fotoja -->
+        </div>
+    </section>
+             </div>
+             </div>
+           <script>
+       // Funksioni për të shfaqur informacionin e liqeneve
+        function shfaqInfo(liqeni) {
+            const infoDiv = document.getElementById('info-liqeni');
+            let foto, pershkrim;
+
+            switch (liqeni) {
+                case 'kashare':
+                    foto = 'assets/images/deal-01.jpg'; // Foto e Liqenit Kashare
+                    pershkrim = `
+                        Liqeni i Kasharajt, ndodhet vetëm 2 km larg qytetit të Lushnjës, në Njësinë Administrative Karbunarë, me një peisazh mjaft të bukur, i cili e bën këtë zonë të vizitohet nga shumë turistë.<br>
+Në Kasharaj ruhet dhe një monument kulturor-historik (urë) e cila i përket shekujve XII-XIII e kalueshme edhe në ditët e sotme.<br>
+E ndërtuar pranë liqenit të Kasharaj, dikur ajo shërbente si rrugë e vjetër për të lidhur trevën e Myzeqesë me Elbasanin.
+                    `;
+                    break;
+                case 'gjyshaj':
+                    foto = 'assets/images/deal-02.jpg'; // Foto e Liqenit Gjyshaj
+                    pershkrim = `
+                        Liqeni i Gjyshajt, ndodhet 15 km larg qytetit të Lushnjës, në Njësinë Administrative Ballagat. Përmes një peizazhi piktoresk përreth kodrave të Darsisë, kjo zonë krahasohet shpesh me  “Toskanën  e Italisë”.
+                    `;
+                    break;
+                case 'ohrid':
+                    foto = 'assets/images/deal-03.jpg'; // Foto e Liqenit Ohër
+                    pershkrim = `
+                        Liqeni i Kupasit, ndodhet 15 km larg qytetit të Lushnjës, në Njësinë Administrative Hysgjokaj. Fshati Kupas shtrihet në kodrat e Lushnjës dhe shquhet për prodhimet e dru frutorëve. Liqeni i madh shfrytëzohet për peshkim dhe piknik ndërsa pozicioni gjeografik e bën një pikë turistike tërheqëse.
+                    `;
+                    break;
+                default:
+                    foto = '';
+                    pershkrim = '';
+            }
+
+            infoDiv.innerHTML = `
+                <img src="${foto}" alt="${liqeni}">
+                <p>${pershkrim}</p>
+            `;
+        }
+
+        // Shfaq informacionin për Liqeni Kashare si parazgjedhje kur faqja ngarkohet
+        shfaqInfo('kashare');
+    </script>
+    <!-- FUNDI LIQENET -->
+    
+    
+    
+    
+    
+    
+    
+    <!-- Kishat Historike -->
+      <!-- Atraksioni 5-->
+    <div class="atraksioni">
+        <h2 class="atraksioni-titulli">Atraksioni 5: Kishat Historike</h2>
+        <div class="atraksioni-permbajtja">
+             <section class="kishat-seksioni">
+        <div class="kishat-header">
+            <h1>Kishat Historike</h1>
+            <p>Eksploroni kishat më të njohura historike në Shqipëri.</p>
+        </div>
+
+        <!-- Butonat për zgjedhjen e kishave -->
+        <div class="kishat-nav">
+            <button class="kisha-nav-btn aktiv" data-target="kisha-shen-nikollit">Kisha e Shën Nikollit</button>
+            <button class="kisha-nav-btn" data-target="kisha-shen-merise">Kisha e Shën Mërisë</button>
+            
+        </div>
+
+        <!-- Pjesa e informacionit dhe fotove -->
+        <div class="kishat-content">
+            <!-- Kisha e Shën Nikollit -->
+            <div id="kisha-shen-nikollit" class="kisha-info aktiv">
+                <div class="kisha-foto">
+                    <img src="assets/images/shen-nikollit.jpg" alt="Kisha e Shën Nikollit">
+                </div>
+                <div class="kisha-detalje">
+                    <h2>Kisha e Shën Nikollës</h2>
+                    <p>Në lagjen Millaçiqi, në qendër të fshatit Sredskë, pranë shkollës fillore gjendet kisha kushtuar Shën Nikollës, e ndërtuar rreth vitit 1875. Fshati Sredskë gjendet 12 km në perëndim të Prizrenit, në krahun e majtë të aksit rrugor Prizren – Prevallë. Objekti ka planimetri drejtkëndëshe, me absidën tri faqëshe në murin lindor. Është kishë njëaniatëshe, e mbuluar me qemer gjysmëharkor. Në pjesën hyrëse, atë perëndimore gjendet edhe pjesa e narteksit dhe kambana. Objekti është ndërtuar me gurë shtufe dhe gurë lumi, me llaç gëlqeror si material lidhës. Nga ana e jashtme objekti është i pa suvatuar derisa nga brenda është suvatuar dhe ngjyrosur me ngjyrë të bardhë. Kulmi është dy ujor, i mbuluar me pllaka të plumbit dhe llamarinës. Në fasadë të kishës gjenden disa hapje gjysmë rrethore dhe nisha gjithashtu me hark gjysmë rrethor. Enterieri i kishës është i pasur me ikonostas të punuar në drugdhendje dhe ikona të shenjtërve. Në oborr të kishës gjenden varrezat e fshatit.</p>
+                    
+                </div>
+            </div>
+
+            <!-- Kisha e Shën Mërisë -->
+            <div id="kisha-shen-merise" class="kisha-info">
+                <div class="kisha-foto">
+                    <img src="assets/images/shen-merise.jpg" alt="Kisha e Shën Mërisë">
+                </div>
+                <div class="kisha-detalje">
+                    <h2>Kisha e Shën Mërisë</h2>
+                    <p>Kisha e Shën Mërisë Bishqethëm është një objekt kulti tipik i ndërtimeve të shek. XVIII. Pikturat janë realizuar nga Johani i cili i përket familjes së Çetirëve nga Grabova, në vitin 1798. Disa prej tyre ruhen në gjendje të mirë dhe përbëjnë një faktor të rëndësishëm kulturor për t’u vizituar. Frekuentohet gjerësisht nga besimtarët. Gjendet në afërsi të rrugës automobilistike Fier-Lushnje, në pjesën lindore të saj, në një distancë 12 km nga Fieri dhe 500m nga autostrada Fier-Lushnje. Shkohet me makina të vogla dhe autobuz.</p>
+                    
+                </div>
+            </div>
+
+        </div>
+    </section>  
+            </div>
+             </div>
+              <script>
+     // Script për të ndryshuar kishat
+const kishaNavBtns = document.querySelectorAll('.kisha-nav-btn');
+const kishaInfos = document.querySelectorAll('.kisha-info');
+
+kishaNavBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Hiq klasën 'aktiv' nga të gjithë butonat dhe kishat
+        kishaNavBtns.forEach(b => b.classList.remove('aktiv'));
+        kishaInfos.forEach(info => info.classList.remove('aktiv'));
+
+        // Shto klasën 'aktiv' për butonin dhe kishën e zgjedhur
+        btn.classList.add('aktiv');
+        const target = btn.getAttribute('data-target');
+        document.getElementById(target).classList.add('aktiv');
+    });
+});
+  </script>
+    <!-- Fundi Kishat Historike -->
+    
+    
+    <!-- Laguna Karavastas -->
+    
+    
+      <!-- Atraksioni 6-->
+    <div class="atraksioni">
+        <h2 class="atraksioni-titulli">Atraksioni 6: Parku i Karavastasë</h2>
+        <div class="atraksioni-permbajtja">
+            <section class="parku-karavasta">
+        <!-- Titulli dhe foto kryesore -->
+        <div class="parku-header">
+            <h1>Parku Kombëtar i Karavastasë</h1>
+            <img src="assets/images/karavasta-main.jpg" alt="Parku i Karavastasë" class="parku-foto">
+        </div>
+
+        <!-- Butonat për navigim -->
+        <div class="parku-menu">
+ 
+            <button class="menu-btn" data-content="biodiversiteti">Laguna</button>
+            <button class="menu-btn" data-content="aktivitetet">Parku</button>
+        </div>
+
+        <!-- Pjesa e përmbajtjes -->
+        <div class="parku-pjesa">
+           
+
+            <!-- Biodiversiteti -->
+            <div id="biodiversiteti" class="parku-info">
+                <h2>Laguna e Karavastasë</h2>
+                <p>Laguna e Karavastasë është në afërsi të Lushnjës dhe në qendër të Ultesirës Perëndimore. Është laguna më e madhe në Shqipëri dhe një nga më të mëdhatë në Adriatik. Ndahet prej detit nga një rryp i hollë toke. E çmuar si me rëndësi ndërkombëtare, mbrojtur nga Konventa e Ramsarit më 29 nëntor 1996.
+Në studimin e historianit kroat Milan Shuflaj "Serbët dhe Shqiptarët" botuar më 1925 në Beograd, duke cituar dijetarin rumun Nicolae Iorga, përmend viset ndërmjet Vregës (Shkumbinit) dhe Devollit (Semanit), veçanërisht provinca Slanica me portin kryesor në grykëderdhjen e Vregës, që quhej Caravastassi. </p>
+                <img src="assets/images/laguna.jpg" alt="Biodiversiteti i Parkut">
+            </div>
+
+            <!-- Aktivitetet -->
+            <div id="aktivitetet" class="parku-info">
+                <h2>Parku Kombëtar</h2>
+                <p>Parku Kombëtar "Divjakë - Karavasta" është një park kombëtar dhe zonë e mbrojtur natyrore i cili ndodhet në Qarkun e Fierit, në rrethet Lushnjë, Fier e Kavaje.
+Sipërfaqja aktuale 22,230.00 ha dhe ndodhet 5 km larg Divjakës dhe 40 km larg qytetit të Lushnjes. Është pa dyshim zona më e rëndësishme përgjatë zonës bregdetare të vendit dhe nga më të rëndësishmet në Mesdhe. Takohen një sërë habiatatesh si: delta lumenjesh, laguna, duna ranore, bimësi psamofite, halofite, dhe hygrofite, pylli me pishë të butë dhe të egër dhe me prani të dëllënjës kokërrmadhe (Juniperus monocarpa). Takohen 3 lloje endemike salepesh të gjinisë Orchis dhe lloji endemik Aster albanicus. Përgjatë deltave takohet gjitari globalisht i kërcënuar lundërza (Lutra lutra). Përhapje ka dhe çakalli, dhelpra, baldosa, etj. Parku dhe zona rreth tij ka vlera historike, kulturore, arkeologjike me potenciale të mëdha për zhvillimin e turizmit. Po hartohet plani i menaxhimit me JICA.
+Laguna është në afërsi të Lushnjes. Në të rriten disa lloje të rralla pishash dhe një lloj i rrallë Pelikani, "Dalmatian Pelican". Supozohet se 5 % e të gjithë pelikanëve të këtij lloji jetojnë aty. Është më e madhja e vendit tonë dhe në gjithë bregdetin jugor të Adriatikut, sip. 4330 ha, gjatësia 10,6 km, gjerësia 4,3 km dhe thellësia deri në 1,5 m. [nevojitet citimi] Ndahet nga deti nëpërmjet një brezi të gjerë rëre, të mbuluar nga pylli i dendur, buzë te cilit ndodhet një plazh mjaft i madh. Lidhet me detin me tri kanale, njëri prej të cilëve artificial, i hapur për nevojat e peshkimit. Nëpër këto kanale, si pasoje e baticës dhe zbaticës, rrjedhja e ujit ndryshon drejtim çdo 6 orë. Gjate një cikli të baticë-zbaticës shkëmbimi i ujit me detin arrin afërsisht 1/50 e volumit të gjithë lagunës. Në brendësi të saj ka dhe ishuj të vegjël, në të cilin folenizojnë shpendët. Karakteristike në këtë zonë është kolonia e Pelikanit Kaçurel me rreth 60 çifte që përfaqëson rreth 5 % të numrit të përgjithshëm të kësaj specie në shkallë botërore.[nevojitet citimi] Karavastaja për këtë specie përfaqëson kufirin më perëndimor të saj. E veçantë është dhe prania e disa qindra çifteve të dallandysheve të detit. Ky park është njëkohësisht pjesë e kompleksit Laguna e Karavastasë, që ndodhet nën mbrojtjen e Konventës Ndërkombëtare të Ramsarit, që nga viti 1994.</p>
+                <img src="assets/images/parku.jpg" alt="Aktivitetet në Park">
+            </div>
+        </div>
+    </section>
+            </div>
+            </div>
+      <script>
+          // Script për të ndryshuar përmbajtjen
+const menuButtons = document.querySelectorAll('.menu-btn');
+const contentSections = document.querySelectorAll('.parku-info');
+
+menuButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Hiq klasën 'aktiv' nga të gjithë butonat dhe pjesët
+        menuButtons.forEach(btn => btn.classList.remove('aktiv'));
+        contentSections.forEach(section => section.classList.remove('aktiv'));
+
+        // Shto klasën 'aktiv' për butonin dhe pjesën e zgjedhur
+        button.classList.add('aktiv');
+        const target = button.getAttribute('data-content');
+        document.getElementById(target).classList.add('aktiv');
+    });
+});
+    </script>
+
+    <!-- Fundi Laguna Karavastas -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+   
+        <script>
+             
+      // Script për të ndryshuar pjesët e informacionit
+const butonat = document.querySelectorAll('.navigimi-butoni');
+const pjeset = document.querySelectorAll('.info-pjesa');
+
+butonat.forEach(butoni => {
+    butoni.addEventListener('click', () => {
+        // Hiq klasën 'aktiv' nga të gjithë butonat dhe pjesët
+        butonat.forEach(b => b.classList.remove('aktiv'));
+        pjeset.forEach(pjesa => pjesa.classList.remove('aktiv'));
+
+        // Shto klasën 'aktiv' për butonin dhe pjesën e zgjedhur
+        butoni.classList.add('aktiv');
+        const target = butoni.getAttribute('data-target');
+        document.getElementById(target).classList.add('aktiv');
+    });
+});
+
+
+
+
+
+  
+        </script>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    // Script për të hapur dhe mbyllur përmbajtjen e atraksioneve
+const atraksionetTitull = document.querySelectorAll('.atraksioni-titulli');
+
+atraksionetTitull.forEach(titulli => {
+    titulli.addEventListener('click', () => {
+        // Mbyll të gjitha përmbajtjet e tjera
+        document.querySelectorAll('.atraksioni-permbajtja.aktiv').forEach(permbajtja => {
+            if (permbajtja !== titulli.nextElementSibling) {
+                permbajtja.style.maxHeight = "0";
+                permbajtja.classList.remove('aktiv');
+            }
+        });
+
+        // Hap ose mbyll përmbajtjen e klikuar
+        const permbajtja = titulli.nextElementSibling;
+        if (permbajtja.classList.contains('aktiv')) {
+            permbajtja.style.maxHeight = "0";
+            permbajtja.classList.remove('aktiv');
+        } else {
+            permbajtja.style.maxHeight = permbajtja.scrollHeight + "px";
+            permbajtja.classList.add('aktiv');
+        }
+    });
+});
+
+</script>
+</body>
+</html>
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>Copyright © 2025 Ky projekt u realizuai nga nxënësit e klasës X-4</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/counter.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  </body>
+</html>
