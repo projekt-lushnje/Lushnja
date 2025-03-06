@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+<style>
+    .foto-seksioni {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.foto-seksioni h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* Stili për foto kryesore */
+.foto-kryesore {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.foto-kryesore-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.info-kryesore {
+    text-align: center;
+}
+
+.info-kryesore h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.info-kryesore p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.butoni {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.butoni:hover {
+    background-color: #0056b3;
+}
+
+/* Stili për foto të tjera */
+.foto-te-tjera {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.foto-karte {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.foto-karte:hover {
+    transform: translateY(-5px);
+}
+
+.foto-karte img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.foto-karte h3 {
+    font-size: 1.5rem;
+    margin: 15px 10px;
+    color: #333;
+}
+
+.foto-karte p {
+    font-size: 1rem;
+    margin: 0 10px 15px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .foto-seksioni h1 {
+        font-size: 2rem;
+    }
+
+    .info-kryesore h2 {
+        font-size: 1.5rem;
+    }
+
+    .foto-kryesore {
+        flex-direction: column;
+    }
+
+    .foto-te-tjera {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .foto-seksioni h1 {
+        font-size: 1.8rem;
+    }
+
+    .info-kryesore h2 {
+        font-size: 1.3rem;
+    }
+
+    .foto-te-tjera {
+        grid-template-columns: 1fr;
+    }
+}
+
+<!-- Muzeuuuuuuu -->
+
+/* Stili për seksionin e muzeut */
+.muzeu-seksioni {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+  
+}
+
+.muzeu-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.muzeu-header h1 {
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.muzeu-header p {
+    font-size: 1.2rem;
+    color: #555;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Stili për ekspozitat */
+.muzeu-kontenti {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.ekspozita {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ekspozita:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.ekspozita-foto {
+    flex: 1;
+    max-width: 40%;
+    position: relative;
+    overflow: hidden;
+}
+
+.foto-arte {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.ekspozita-foto:hover .foto-arte {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.ekspozita-foto:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 1rem;
+}
+
+.ekspozita-info {
+    flex: 2;
+    padding: 20px;
+}
+
+.ekspozita-info h2 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.ekspozita-info .rubrika {
+    font-size: 1rem;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ekspozita-info p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.butoni {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.butoni:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Animacione */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ekspozita {
+        flex-direction: column;
+    }
+
+    .ekspozita-foto {
+        max-width: 100%;
+    }
+
+    .ekspozita-info {
+        padding: 15px;
+    }
+
+    .ekspozita-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .ekspozita-info p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .muzeu-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .muzeu-header p {
+        font-size: 1rem;
+    }
+
+    .ekspozita-info h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+<!-- Ardeniceeee -->
+
+
+
+
+
+/* Stili për seksionin e Ardenicës */
+.ardenica-seksioni {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.ardenica-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ardenica-header h1 {
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.ardenica-header p {
+    font-size: 1.2rem;
+    color: #555;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Stili për navigimin */
+.navigimi {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.navigimi-butoni {
+    padding: 10px 20px;
+    background-color: black;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navigimi-butoni.aktiv {
+    background-color: #f35525;
+}
+
+.navigimi-butoni:hover {
+    background-color: #f35525;
+    transform: translateY(-3px);
+}
+
+/* Stili për pjesën e informacionit */
+.ardenica-kontenti {
+    position: relative;
+}
+
+.info-pjesa {
+    display: none;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.info-pjesa.aktiv {
+    display: block;
+}
+
+.info-pjesa h2 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.info-pjesa p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.info-pjesa img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Animacione */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navigimi {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigimi-butoni {
+        width: 100%;
+        text-align: center;
+    }
+
+    .ardenica-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .ardenica-header p {
+        font-size: 1rem;
+    }
+
+    .info-pjesa h2 {
+        font-size: 1.8rem;
+    }
+
+    .info-pjesa p {
+        font-size: 1rem;
+    }
+}
+
+
+<!-- kishatttt -->
+
+
+/* Stili për seksionin e kishave */
+.kishat-seksioni {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    
+}
+
+.kishat-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.kishat-header h1 {
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.kishat-header p {
+    font-size: 1.2rem;
+    color: #555;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Stili për navigimin */
+.kishat-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.kisha-nav-btn {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.kisha-nav-btn.aktiv {
+    background-color: #f35525;
+}
+
+.kisha-nav-btn:hover {
+    background-color: #f35525;
+    transform: translateY(-3px);
+}
+
+/* Stili për pjesën e informacionit dhe fotove */
+.kishat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.kisha-info {
+    display: none;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.kisha-info.aktiv {
+    display: flex;
+}
+
+.kisha-foto {
+    flex: 1;
+    max-width: 40%;
+}
+
+.kisha-foto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.kisha-detalje {
+    flex: 2;
+}
+
+.kisha-detalje h2 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.kisha-detalje p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.kisha-detalje ul {
+    list-style-type: none;
+}
+
+.kisha-detalje ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Animacione */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .kishat-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kisha-nav-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .kisha-info {
+        flex-direction: column;
+    }
+
+    .kisha-foto {
+        max-width: 100%;
+    }
+
+    .kishat-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .kishat-header p {
+        font-size: 1rem;
+    }
+
+    .kisha-detalje h2 {
+        font-size: 1.8rem;
+    }
+
+    .kisha-detalje p {
+        font-size: 1rem;
+    }
+}
+
+
+
+/* Stili për seksionin e Parkut të Karavastasë */
+.parku-karavasta {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    
+}
+
+.parku-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.parku-header h1 {
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.parku-foto {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Stili për menunë e butonave */
+.parku-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Butonat të kthehen në rresht të ri në ekran të vegjël */
+}
+
+.menu-btn {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
+}
+
+.menu-btn.aktiv {
+    background-color: #f35525;
+}
+
+.menu-btn:hover {
+    background-color: #f35525;
+    transform: translateY(-3px);
+}
+
+/* Stili për pjesën e informacionit */
+.parku-pjesa {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.parku-info {
+    display: none;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.parku-info.aktiv {
+    display: block;
+}
+
+.parku-info h2 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.parku-info p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.parku-info img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Animacione */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .parku-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .parku-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .menu-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .parku-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .parku-info p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .parku-header h1 {
+        font-size: 2rem;
+    }
+
+    .menu-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .parku-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .parku-info p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+/* Stilizimi i seksionit të videos */
+.video-section {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.video-container p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Stilizimi i video-wrapper për ta bërë atë responsive */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    background-color: #000; /* Ngjyra e zezë për background nëse video nuk mbush plotësisht */
+}
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Siguron që video të mbushë plotësisht hapësirën */
+}
+
+/* Responsive design për ekrane më të vegjël */
+@media (max-width: 768px) {
+    .video-container h1 {
+        font-size: 2rem;
+    }
+
+    .video-container p {
+        font-size: 1rem;
+    }
+}
+</style>
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Lushnja:kulturat-traditat-historia Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-villa-agency.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+TemplateMo 591 villa agency
+
+https://templatemo.com/tm-591-villa-agency
+
+-->
+
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <img src="logoo.jpg" alt=""></img>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        
+                         <li><a href="index.html" class="active">🇦🇱</a></li>
+                        
+                                     <li><a style="font-size:10px" href="indexenglish.html" class="active">HOME</a></li>
+                      <li><a style="font-size:10px" href="hartaatraenglish.html">TOURIST DESTINATION</a></li>
+                      <li><a style="font-size:10px" href="audioguideenglish.html">AUDIOGUIDE</a></li>
+                                            
+                     <li><a style="font-size:10px" href="kalendarienglish.html">CALENDAR</a></li>
+                          
+      <li><a style="font-size: 10px;" href="mappp.html">MAP</a></li>
+   <li><a style="font-size: 10px;" href="revistenglish.html">MAGAZINE</a></li>
+  <li><a style="font-size: 10px;" href="komente.html">REVIEWS</a></li>
+                     
+                      <li style="display: none;"><a href=""></a>■■</li>
+                     
+                     <!--  
+                      <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
+                      <!--  -->
+                  </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner">
+    <div class="owl-carousel owl-banner">
+      
+      <div class="item item-2">
+        <div class="header-text">
+          <span style="font-weight: bold;" class="category">Kongresi, <em>Lushnjë</em></span>
+          <h2>THE HOUSE OF CONGRESS</h2>
+        </div>
+      </div>
+      <div class="item item-3">
+        <div class="header-text">
+          <span style="font-weight: bold;" class="category">Ardenicë, <em>Lushnja District</em></span>
+         <h2>ARDENICA MONASTERY</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="featured section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="left-image">
+            <img src="assets/images/featured.jpg" alt="">
+         
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="section-heading">
+           
+            <h2>WELCOME TO LUSHNJË – THE HEART OF MYZEQE!</h2>
+          </div>
+          <h3>Why Should We Visit Lushnjë?<br>
+Interesting Facts</h3>
+<br>
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  The Historical Role of Lushnja:
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+              Lushnja is a city of great historical significance in Albania. It is particularly known for the Lushnja Congress held in January 1920, where the foundations for the establishment of Albanian state institutions after World War I were laid. This congress is recognized as a pivotal moment in the history of Albania.
+ </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Strategic Geographical Position:
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+             The city is located in the center of Albania and is easily connected to other cities such as Tirana, Fier, and Berat. This position makes it an important transit point for visitors.
+                </div>
+              </div>
+              
+              
+              
+              
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoo" aria-expanded="false" aria-controls="collapseTwoo">
+                  Natural Landscape:
+                </button>
+              </h2>
+              <div id="collapseTwoo" class="accordion-collapse collapse" aria-labelledby="headingTwoo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  For those seeking an outdoor experience, Lushnja offers vast fields and gentle hills covered with olive groves. The area is ideal for natural explorations and for capturing spectacular sunset photographs.
+                </div>
+              </div>   
+              
+              </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  The combination of tradition and modernity:
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Lushnja has maintained a harmony between its rich traditions and modern development, offering a unique blend for visitors who wish to experience authentic Albania.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<br><br><br>
+              
+              
+           <section class="video-section">
+        <div class="video-container">
+            <h1>Zbuloni Lushnjën</h1>
+            <p>Një video spot që tregon bukurinë e qytetit tonë.</p>
+            <div class="video-wrapper">
+                <!-- Përdor elementin <video> për të vendosur videon nga folderi lokal -->
+                <video controls>
+                    <source src="lv_0_20250216194510.mp4" type="video/mp4">
+                  
+                    Shfletuesi juaj nuk mbështet elementin <code>video</code>.
+                </video>
+            </div>
+        </div>
+    </section>
+
+  
+  
+ <section class="foto-seksioni">
+        <h1>Congress of Lushnjë</h1>
+        <div class="foto-kryesore">
+            <img src="assets/images/banner-02.jpg" alt="Foto Kryesore" class="foto-kryesore-img">
+            <div class="info-kryesore">
+                <h2>The House of Congress</h2>
+                <p style="text-align: justify; margin: 0; padding: 0;> The "Lushnja Congress Museum" is a cultural institution that was initially opened as a Museum House in 1960. It is located in the city of Lushnja and is housed in a building of significant historical importance, as the Lushnja Congress was held here from January 21 to 31, 1920.
+<br>
+The Lushnja Congress was an important event in the history of Albania, where key decisions were made regarding the country's future after World War I. During this congress, representatives of the Provisional Government of Albania and other patriots gathered to discuss and approve a series of measures that influenced the formation of modern Albanian statehood.
+<br>
+The Museum House of the Lushnja Congress offers a walk through the historical event of this congress. The exhibits and materials presented reveal important details about the meetings, discussions, and decisions made during this critical period in Albania's history.
+<br>
+Additionally, the museum presents original documents, photographs, and other objects that help to better understand the historical and political context of the time of the Lushnja Congress.
+<br>
+The "Lushnja Congress Museum" is an important destination for those who wish to learn more about the post-war period and the developments that took place in Albania at the beginning of the last century. Through exhibits and informative materials, visitors can better understand the country's history and heritage.
+
+</p>
+                
+            </div>
+        </div>
+        <div class="foto-te-tjera">
+            <div class="foto-karte">
+                <img src="assets/images/foto2.jpg" alt="Foto 2">
+                
+                
+            </div>
+            <div class="foto-karte">
+                <img src="assets/images/foto3.jpg" alt="Foto 3">
+                
+                
+            </div>
+            <div class="foto-karte">
+                <img src="assets/images/foto4.jpg" alt="Foto 4">
+               
+            </div>
+        </div>
+    </section>
+  
+  
+  <section class="muzeu-seksioni">
+        <div class="muzeu-header">
+            <h1>Historical Museum</h1>
+            <br><br>
+            
+            <img src="assets/images/muzeuu.jpg" alt="" style="border-radius: 50px;">
+            <br><br><br>
+            <p style="text-align: justify; margin: 0; padding: 0;">
+
+The Lushnja Historical Museum is an important cultural institution in the city of Lushnja, which conserves and displays a wide range of significant historical and cultural objects. With around 200 items in its collection, this museum offers a rich journey through the history and culture of the Lushnja region and beyond.
+<br>
+At the Lushnja Historical Museum, visitors can discover general information about the archaeological objects found in the territory of Lushnja. This includes artifacts and traces of various cultures that have lived and left their mark on this region, making it an important archaeological site in the history of Albania.
+<br>
+Additionally, the museum contains a rich collection of ethnographic objects, which represent the traditions, material culture, and everyday life of the people of this area throughout the centuries. These objects provide a clear view of daily life and the cultural heritage traditions of this land.
+<br>
+In its halls, the Lushnja Historical Museum also showcases a substantial collection of photographs from the periods of World War I and World War II. These photographs shed light on the historical events and their impact on the local community, reinforcing the understanding of this country's history and the memory of significant global events.
+
+</p>
+        </div>
+        <div class="muzeu-kontenti">
+            <!-- Ekspozita 1 -->
+            <div class="ekspozita">
+                <div class="ekspozita-foto">
+                    <img src="assets/images/paleolit.jpg" alt="Artefakt 1" class="foto-arte">
+                    <br>
+                    <img src="assets/images/neolit.jpg" alt="Artefakt 1" class="foto-arte">
+                    
+                    <div class="overlay">
+                        <h3>Periods</h3>
+                      
+                    </div>
+                </div>
+                <div class="ekspozita-info">
+                    <h2>Periods: Paleolithic, Mesolithic, Neolithic</h2>
+                  
+                    <p>1. Paleolithic (Old Stone Age) – around 100,000 – 10,000 BCE
+This period encompasses the early development of humanity in the territory of Albania.
+The most important findings are in the caves of Xara (Saranda), Konispoli, Treni (Devoll), and Kryegjata (Mallakastër).
+The inhabitants were mainly hunters and gatherers, using flint tools.
+Settlements existed primarily in caves and naturally protected areas.
+<br><br>
+
+
+2. Mesolithic (Middle Stone Age) – around 10,000 – 7,000 BCE
+This period represents the transition from nomadic life to more permanent settlements.
+In Albania, the traces of this era are fewer, but there is evidence that stone tools began to be worked with greater refinement.
+The inhabitants started to use more advanced techniques for hunting and fishing.
+The Mesolithic period marks the beginning of the transition to agriculture and animal husbandry.
+<br><br>
+
+
+3. Neolithic (New Stone Age) – around 7,000 – 3,000 BCE
+The Neolithic period is characterized by the development of agriculture and animal husbandry, leading to the creation of permanent settlements.
+The most important archaeological findings from this period are in Maliq, Cakran (Fier), Vashtemi (Korça), and Blaz (Mat).
+The production of clay vessels begins, and more advanced techniques for processing stone and bone are used.
+The Maliq culture is one of the most significant of this period in the Balkans, showing influences from other Mediterranean and Balkan cultures.</p>
+                   
+                </div>
+            </div>
+
+            <!-- Ekspozita 2 -->
+            <div class="ekspozita">
+                <div class="ekspozita-foto">
+                       <img src="assets/images/iliri.JPG" alt="Artefakt 1" class="foto-arte">
+                    <br>
+                    <img src="assets/images/iliri2.jpg" alt="Artefakt 1" class="foto-arte">
+                    <div class="overlay">
+                        <h3>Illyrian Civilizations</h3>
+                        
+                    </div>
+                </div>
+                <div class="ekspozita-info">
+                    <h2>Illyrian Civilizations</h2>
+                    
+                    <p>The Illyrian civilizations were a group of ancient tribes living in the Western Balkans, primarily in the territories of present-day Albania, Kosovo, Montenegro, Bosnia and Herzegovina, Croatia, Serbia, and North Macedonia. They developed from the Bronze Age until the Roman conquest in the 2nd century BCE.
+<br>
+
+1. Origins and Distribution
+The Illyrians were an Indo-European people who appeared in the Balkans as early as the 2nd millennium BCE.
+The Illyrian tribes were numerous, including the Taulanti, Ardiani, Dardani, Labeates, and Autariates.
+Their main centers included Shkodra, Rhizon (Risan), Byllis, Dyrrachium (Durrës), and Skupi (Skopje).
+<br>
+
+
+2. Political and Social Organization
+Initially organized in independent tribes, the Illyrians later formed powerful kingdoms, such as the Kingdom of the Ardiani and the Dardani.
+The Ardian kingdom, under the rule of Agron and Teuta, fought against Rome in the 3rd century BCE.
+The Dardani had a strong organization and significant economic development.
+<br>
+
+
+3. Economy and Culture
+The Illyrians were primarily herders and farmers but were also skilled sailors and traders.
+They had a rich artisan culture, producing ceramic vessels, weapons, and sophisticated jewelry.
+Their architecture included fortified cities with stone walls (Illyrian forts).
+<br>
+
+
+4. Religion and Beliefs
+The Illyrians worshiped nature and had many gods, such as Bindus (god of waters) and Anzotiku.
+The cult of the serpent was widespread among them.
+<br>
+
+
+5. Relations with Rome and Roman Conquest
+The Illyrians fought several times against Rome in the Illyrian Wars between the 3rd and 2nd centuries BCE.
+After the defeat of Teuta and Genthius, the Illyrians were gradually conquered by the Romans and incorporated into the Roman Empire.
+<br>
+
+
+6. Heritage
+The Illyrians are considered the main ancestors of the Albanians.
+Some of the most famous figures of Illyrian origin include Roman emperors such as Diocletian and Constantine the Great.
+The Illyrian language did not survive, but some elements are believed to have passed into the modern Albanian language.
+<br>
+
+
+
+The Illyrians played an important role in the history of the Balkans, and their influence is still visible in the culture and language of the region.
+
+
+
+</p>
+                  
+                </div>
+            </div>
+
+        </div>
+    </section>
+  
+  
+  <br>
+  
+  
+  
+  
+  <section class="ardenica-seksioni">
+        <div class="ardenica-header">
+            <h1>ARDENICA MONASTERY</h1>
+            <br><br>
+             <img style="border-radius: 50px; padding: 50px" src="assets/images/banner-03.jpg" alt="Artefakt 1">
+          
+        </div>
+
+        <!-- Pjesa e Navigimit -->
+        <div class="navigimi">
+            <button style="color: white; font-weight: bold;" class="navigimi-butoni aktiv" data-target="historia">History</button>
+            <button style="color: white; font-weight: bold;" class="navigimi-butoni" data-target="arkitektura">Architecture</button>
+            <button style="color: white; font-weight: bold;" class="navigimi-butoni" data-target="turizmi">Tourist Destination</button>
+        </div>
+
+        <!-- Pjesa e Përmbajtjes -->
+        <div class="ardenica-kontenti">
+            <!-- Historia -->
+            <div id="historia" class="info-pjesa aktiv">
+                <h2>History of the Monastery</h2>
+                <p>It is believed that the foundations of this monastery were laid in 1282 at the initiative of the Byzantine Emperor Andronikos II Palaiologos, who built this temple after his victory over the Angevins in Berat. The foundation for this action was likely the presence of the Chapel of the Holy Trinity, which had been erected there centuries earlier. There is a hypothesis that the chapel might have been built on the ruins of a pagan temple, which was dedicated to the goddess Artemis, and from which the current name "Ardenica" originates.
+
+Close to this temple, in the vicinity where the monastery is located today, passed the southern branch of the ancient Egnatian Road, precisely 1 km to its west. Around the monastery, one can still see old buildings here and there, suggesting that there may have been a settlement around it. According to the Ottoman defter (tax register) of 1431-32, in the district of Myzeqe, there was the village of Ardenica with eight houses, which could have extended around the monastery.
+
+Another testimony to the importance of this monastery is the fact that it plays an increasingly important role in the history of Albania. In the altar of the Ardenica Monastery Church, the wedding of our national hero, Gjergj Kastrioti (Skanderbeg), to Andronika Arianiti, took place. The ceremony was held at noon on April 21, 1451, by the bishop of Kanina, Felix, in the presence of Albanian princes and ambassadors from Naples, Venice, and Ragusa. This fact was first mentioned in 1940 by the Italian historian A. Lorenconi. </p>
+                <img src="assets/images/historia.jpg" alt="Historia e Manastirit">
+            </div>
+
+            <!-- Arkitektura -->
+            <div id="arkitektura" class="info-pjesa">
+                <h2>Architecture of the Monastery</h2>
+                <p>The monastery is of the Byzantine-Orthodox type. Together with the guesthouses added later, it occupies an area of 2,500 m². This monument consists of the Church of the Virgin Mary, the Chapel of the Holy Trinity, the guesthouses, the oil mill, the bakery, the stables, and other buildings. In its center is the "Nativity of the Virgin Mary" church, which is partially built with stones brought from Apollonia and pumice stones. The church is of the basilica type. It has a large volume and is covered with a wooden roof with a flat ceiling. The spaces that make up this church are: the naos, the narthex, and the two-story exonarthex, at the end of which is attached the 24-meter bell tower. On the southern side is the open portico built with columns and arches. The naos is divided into three parts, separated by two rows of wooden columns. The naos is separated from the altar by an iconostasis. The church floor is paved with stone slabs, which also cover the areas of the narthex and exonarthex.
+In 1743, at the initiative of the Bishop of Berat, Methodius, who was originally from Bubullima (Myzeqe), restoration works were carried out at the monastery, including the Church of the Virgin Mary. The Chapel of the Holy Trinity is located in the northeastern part of the monastery and has dimensions of 7.50 m x 3.70 m. Its entrance is on the western side and is equipped with two small windows on the southern face. This chapel is built with pumice stone and has a space, the semi-circular wall of which separates it from a water trough. The chapel's door is covered with a stone arch, and near its eastern window, there is also a ceramic relief.
+</p>
+                <img src="assets/images/arkitektura.jpg" alt="Arkitektura e Manastirit">
+            </div>
+
+            <!-- Vend Turistik -->
+            <div id="turizmi" class="info-pjesa">
+                <h2>Tourist Destination</h2>
+                <p>The hills of Ardenica are located to the south of the large Myzeqe plain, with a dominant position visible from all sides, at an altitude of 237 meters above sea level. This location, like a balcony, offers views from its bell tower of Kruja, Mount Dajti, Tomorr, the Adriatic Sea, the Kravasta lagoon, and all the way south to the mountains of Laberia, making Ardenica a popular destination for leisure and recreational tourism. Its value is further enhanced by the surrounding oak forest and olive groves along the shores around the monastery. Additionally, the cultural and historical significance of this temple, as mentioned earlier, makes it one of the most attractive centers for academic tourism. In this regard, the fact that the Myzeqe basin, thanks to its strategic and privileged position, has always had a high level of economic and cultural development, also plays a significant role. Evidence of this are several early medieval monasteries, which serve as reflections of this development. The monastery "Nativity of the Virgin Mary" of Ardenica is one such example, and it remains an important cultural landmark.</p>
+                <img src="assets/images/turistik.jpg" alt="Vend Turistik">
+            </div>
+        </div>
+    </section>
+  
+  
+  <div class="section best-deal">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="section-heading">
+            
+            <h2>A journey through the lakes.</h2>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="tabs-content">
+            <div class="row">
+              <div class="nav-wrapper ">
+                <ul class="nav nav-tabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="appartment-tab" data-bs-toggle="tab" data-bs-target="#appartment" type="button" role="tab" aria-controls="appartment" aria-selected="true">1</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="villa-tab" data-bs-toggle="tab" data-bs-target="#villa" type="button" role="tab" aria-controls="villa" aria-selected="false">2</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="penthouse-tab" data-bs-toggle="tab" data-bs-target="#penthouse" type="button" role="tab" aria-controls="penthouse" aria-selected="false">3</button>
+                  </li>
+                </ul>
+              </div>              
+             
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="appartment" role="tabpanel" aria-labelledby="appartment-tab">
+                  <div class="row">
+                     
+                    <div class="col-lg-6">
+                      <img src="assets/images/deal-01.jpg" alt="">
+                    </div>
+                    <div class="col-lg-3">
+                      <h4>Kasharaj Lake</h4>
+                      <p>Kasharaj Lake is located just 2 km away from the city of Lushnjë, in the Karbunarë Administrative Unit, offering a very beautiful landscape that makes this area a popular destination for many tourists.
+In Kasharaj, there is also a cultural-historical monument (a bridge) dating back to the 12th-13th centuries, still passable today.
+Built near the Kasharaj lake, it once served as an ancient road linking the Myzeqe region with Elbasan.</p>
+                    
+                    </div>
+                  </div>
+                </div>
+                
+                
+                
+                
+                <div class="tab-pane fade" id="villa" role="tabpanel" aria-labelledby="villa-tab">
+                  <div class="row">
+                      
+                    <div class="col-lg-6">
+                      <img src="assets/images/deal-02.jpg" alt="">
+                    </div>
+                    <div class="col-lg-3">
+                      <h4>Gjyshaj Lake</h4>
+                      <p>Gjyshaj Lake is located 15 km from the city of Lushnjë, in the Ballagat Administrative Unit. Through a picturesque landscape around the hills of Darsia, this area is often compared to "Tuscany of Italy."</p>
+                     
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="penthouse" role="tabpanel" aria-labelledby="penthouse-tab">
+                  <div class="row">
+                    
+                    <div class="col-lg-6">
+                      <img src="assets/images/deal-03.jpg" alt="">
+                    </div>
+                    <div class="col-lg-3">
+                      <h4>Kupas Lake</h4>
+                      <p>Kupas Lake is located 15 km from the city of Lushnjë, in the Hysgjokaj Administrative Unit. The village of Kupas stretches across the hills of Lushnjë and is known for its fruit tree products. The large lake is used for fishing and picnics, while its geographical position makes it an attractive tourist destination.</p>
+                  
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+ <section class="kishat-seksioni">
+        <div class="kishat-header">
+            <h1>Historical Churches</h1>
+            <p>Explore the most famous historical churches in Albania.</p>
+        </div>
+
+        <!-- Butonat për zgjedhjen e kishave -->
+        <div class="kishat-nav">
+            <button class="kisha-nav-btn aktiv" data-target="kisha-shen-nikollit">St. Nicholas Church</button>
+            <button class="kisha-nav-btn" data-target="kisha-shen-merise">Church of St. Mary</button>
+            
+        </div>
+
+        <!-- Pjesa e informacionit dhe fotove -->
+        <div class="kishat-content">
+            <!-- Kisha e Shën Nikollit -->
+            <div id="kisha-shen-nikollit" class="kisha-info aktiv">
+                <div class="kisha-foto">
+                    <img src="assets/images/shen-nikollit.jpg" alt="Kisha e Shën Nikollit">
+                </div>
+                <div class="kisha-detalje">
+                    <h2>St. Nicholas Church</h2>
+                    <p>In the Millaçiqi neighborhood, in the center of the village of Sredskë, near the primary school, is the church dedicated to St. Nicholas, built around 1875. The village of Sredskë is located 12 km west of Prizren, on the left side of the road axis Prizren – Prevallë. The building has a rectangular plan, with a three-sided apse on the eastern wall. It is a single-nave church, covered with a semi-circular vault. The entrance area, located in the western part, also includes the narthex and bell tower. The building is made of tufa stone and river stone, with lime mortar as the binding material. On the exterior, the building is not plastered, while on the interior, it is plastered and painted white. The roof is gabled, covered with lead tiles and sheet metal. On the façade of the church, there are several semi-circular openings and niches, also with semi-circular arches. The interior of the church is rich with an iconostasis crafted in woodcarving and icons of saints. In the churchyard, there are the village's graves.</p>
+                   
+                </div>
+            </div>
+
+            <!-- Kisha e Shën Mërisë -->
+            <div id="kisha-shen-merise" class="kisha-info">
+                <div class="kisha-foto">
+                    <img src="assets/images/shen-merise.jpg" alt="Kisha e Shën Mërisë">
+                </div>
+                <div class="kisha-detalje">
+                    <h2>Church of St. Mary</h2>
+                    <p>The Church of St. Mary in Bishqethëm is a typical cult object from the 18th century. The paintings were created by Johani, who belongs to the Çetiri family from Grabova, in 1798. Some of them are well-preserved and constitute an important cultural factor worth visiting. It is frequently visited by believers. It is located near the Fier-Lushnje road, on its eastern side, 12 km from Fier and 500 meters from the Fier-Lushnje highway. It can be accessed by small cars and buses.</p>
+                   
+                </div>
+            </div>
+
+        </div>
+    </section>
+   <script>
+     // Script për të ndryshuar kishat
+const kishaNavBtns = document.querySelectorAll('.kisha-nav-btn');
+const kishaInfos = document.querySelectorAll('.kisha-info');
+
+kishaNavBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Hiq klasën 'aktiv' nga të gjithë butonat dhe kishat
+        kishaNavBtns.forEach(b => b.classList.remove('aktiv'));
+        kishaInfos.forEach(info => info.classList.remove('aktiv'));
+
+        // Shto klasën 'aktiv' për butonin dhe kishën e zgjedhur
+        btn.classList.add('aktiv');
+        const target = btn.getAttribute('data-target');
+        document.getElementById(target).classList.add('aktiv');
+    });
+});
+  </script>
+  
+
+
+
+
+<section class="parku-karavasta">
+        <!-- Titulli dhe foto kryesore -->
+        <div class="parku-header">
+            <h1>Karavasta National Park</h1>
+            <img src="assets/images/karavasta-main.jpg" alt="Parku i Karavastasë" class="parku-foto">
+        </div>
+
+        <!-- Butonat për navigim -->
+        <div class="parku-menu">
+ 
+            <button class="menu-btn" data-content="biodiversiteti">Lagoon</button>
+            <button class="menu-btn" data-content="aktivitetet">Park</button>
+        </div>
+
+        <!-- Pjesa e përmbajtjes -->
+        <div class="parku-pjesa">
+           
+
+            <!-- Biodiversiteti -->
+            <div id="biodiversiteti" class="parku-info">
+                <h2>Karavasta Lagoon</h2>
+                <p>Karavasta Lagoon is located near Lushnja and in the center of the Western Lowlands. It is the largest lagoon in Albania and one of the largest in the Adriatic. It is separated from the sea by a narrow strip of land. Valued for its international importance, it has been protected by the Ramsar Convention since November 29, 1996.
+
+In the study of Croatian historian Milan Shuflaj, "Serbs and Albanians", published in 1925 in Belgrade, citing Romanian scholar Nicolae Iorga, he mentions the areas between Vrega (Shkumbin) and Devoll (Seman), particularly the province of Slanica with the main port at the mouth of Vrega, which was called Caravastassi. </p>
+                <img src="assets/images/laguna.jpg" alt="Biodiversiteti i Parkut">
+            </div>
+
+            <!-- Aktivitetet -->
+            <div id="aktivitetet" class="parku-info">
+                <h2>National Park</h2>
+                <p>The "Divjakë - Karavasta" National Park is a national park and protected natural area located in the Fier County, encompassing the districts of Lushnja, Fier, and Kavaja. The current area spans 22,230.00 hectares and is situated 5 km away from Divjakë and 40 km from the city of Lushnja. It is undoubtedly the most important area along the country's coastal zone and one of the most significant in the Mediterranean. Various habitats are found here, such as river deltas, lagoons, sand dunes, psammophytes, halophytes, and hygrophytes, as well as forests with both soft and wild pines, and the presence of juniper (Juniperus monocarpa). Three endemic species of orchids (genus Orchis) and the endemic species Aster albanicus are found in the park. The globally threatened otter (Lutra lutra) is present along the deltas. Other species include the jackal, fox, wild boar, and more. The park and its surrounding area have historical, cultural, and archaeological values with great potential for tourism development. A management plan is being developed with JICA.
+
+The lagoon is located near Lushnja. It is home to several rare species of pines and the rare Dalmatian Pelican. It is believed that 5% of the entire population of this pelican species resides here. It is the largest lagoon in the country and along the entire southern Adriatic coast, covering 4,330 hectares, with a length of 10.6 km, width of 4.3 km, and depth of up to 1.5 meters. The lagoon is separated from the sea by a wide strip of sand, covered by a dense forest, and features a large beach along its edge. It connects to the sea through three channels, one of which is artificial and opened for fishing purposes. The water flow in these channels changes direction every 6 hours due to the tide. During a tide cycle, the exchange of water with the sea reaches approximately 1/50 of the total volume of the lagoon. Inside the lagoon, there are small islands that serve as nesting sites for birds. A notable characteristic of the area is the Dalmatian Pelican colony, with around 60 pairs, representing about 5% of the total population of this species worldwide. Karavasta marks the westernmost limit of this species. The presence of several hundred pairs of sea swallows is also significant. This park is part of the Karavasta Lagoon complex, which has been under the protection of the Ramsar Convention since 1994.</p>
+                <img src="assets/images/parku.jpg" alt="Aktivitetet në Park">
+            </div>
+        </div>
+    </section>
+    <script>
+          // Script për të ndryshuar përmbajtjen
+const menuButtons = document.querySelectorAll('.menu-btn');
+const contentSections = document.querySelectorAll('.parku-info');
+
+menuButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Hiq klasën 'aktiv' nga të gjithë butonat dhe pjesët
+        menuButtons.forEach(btn => btn.classList.remove('aktiv'));
+        contentSections.forEach(section => section.classList.remove('aktiv'));
+
+        // Shto klasën 'aktiv' për butonin dhe pjesën e zgjedhur
+        button.classList.add('aktiv');
+        const target = button.getAttribute('data-content');
+        document.getElementById(target).classList.add('aktiv');
+    });
+});
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+             
+      // Script për të ndryshuar pjesët e informacionit
+const butonat = document.querySelectorAll('.navigimi-butoni');
+const pjeset = document.querySelectorAll('.info-pjesa');
+
+butonat.forEach(butoni => {
+    butoni.addEventListener('click', () => {
+        // Hiq klasën 'aktiv' nga të gjithë butonat dhe pjesët
+        butonat.forEach(b => b.classList.remove('aktiv'));
+        pjeset.forEach(pjesa => pjesa.classList.remove('aktiv'));
+
+        // Shto klasën 'aktiv' për butonin dhe pjesën e zgjedhur
+        butoni.classList.add('aktiv');
+        const target = butoni.getAttribute('data-target');
+        document.getElementById(target).classList.add('aktiv');
+    });
+});
+
+
+
+
+
+  
+        </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-8">
+        <p>Copyright © 2025 Ky projekt u realizuai nga nxënësit e klasës X-4</p>
+        
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/counter.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  </body>
+</html>
