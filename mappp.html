@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Lushnja:kulturat-traditat-historia</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-villa-agency.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+TemplateMo 591 villa agency
+
+https://templatemo.com/tm-591-villa-agency
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+ 
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <img src="logoo.jpg" alt=""></img>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li><a style="font-size:10px" href="index.html" class="active">KREU</a></li>
+                      <li><a style="font-size: 10px;" href="hartaatra.html">ATRAKSIONET TURISTIKE</a></li>
+                      <li><a style="font-size: 10px;" href="audioguide.html">AUDIOGUIDE</a></li>
+                      <li><a style="font-size: 10px;" href="kalendari.html">KALENDARI</a></li>
+                       <li><a style="font-size: 10px;" href="mappp.html">HARTA</a></li>
+                       <li><a style="font-size: 10px;" href="revist.html">REVISTA</a></li>
+                      <li><a style="font-size: 10px;" href="komente.html">KOMENTE</a></li>
+                     
+                      <li style="display: none;"><a href=""></a>■■</li>
+                     
+                     <!--  
+                      <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
+                      <!--  -->
+                  </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Vendosni këtë në vendin ku dëshironi të shfaqet harta dhe fletpalosja -->
+<div class="custom-map-brochure-section">
+  <div class="custom-container">
+    <h1 class="custom-title">HARTA E QYTETIT</h1>
+    
+    <div class="custom-map-container">
+      <div class="custom-zoom-controls">
+        <button class="custom-zoom-btn" id="zoom-in">+</button>
+        <button class="custom-zoom-btn" id="zoom-out">-</button>
+        <button class="custom-zoom-btn" id="zoom-reset">↻</button>
+      </div>
+      <div class="custom-map-wrapper">
+        <div class="custom-map-image-container" id="map-container">
+          <img src="assets/images/hartaaaa.jpg" alt="Harta e vizatuar në Canva" id="map-image">
+        </div>
+      </div>
+    </div>
+    
+    <h2 class="custom-subtitle">DESTINACIONET</h2>
+    <div class="custom-brochure-container">
+      <div class="custom-brochure-viewer">
+        <img src="assets/images/flp1.png" alt="Pjesa 1 e fletpalosjes" class="custom-brochure-image active" id="img1">
+        <img src="assets/images/flp2.png" alt="Pjesa 2 e fletpalosjes" class="custom-brochure-image inactive" id="img2">
+        <img src="assets/images/flp3.png" alt="Pjesa 3 e fletpalosjes" class="custom-brochure-image inactive" id="img3">
+      </div>
+      <button class="custom-flip-btn" id="flip-btn">VAZHDO</button>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Shtoni këtë CSS në head ose në një file të veçantë CSS */
+.custom-map-brochure-section {
+  position: relative;
+  z-index: 1;
+  margin: 40px 0;
+  padding: 20px 0;
+}
+
+.custom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+
+.custom-title, .custom-subtitle {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.custom-map-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto 30px auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #f8f8f8;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+  touch-action: none;
+}
+
+.custom-map-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 70.65%;
+  height: 0;
+  overflow: hidden;
+}
+
+.custom-map-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.1s ease;
+  will-change: transform;
+}
+
+.custom-map-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.custom-zoom-controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.custom-zoom-btn {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  user-select: none;
+}
+
+.custom-zoom-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.custom-brochure-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.custom-brochure-viewer {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.custom-brochure-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.5s ease;
+  background-color: white;
+}
+
+.custom-brochure-image.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.custom-brochure-image.inactive {
+  opacity: 0;
+  z-index: 0;
+}
+
+.custom-flip-btn {
+  padding: 10px 30px;
+  background-color: #f35525;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.custom-flip-btn:hover {
+  background-color: #f35525;
+}
+
+@media (max-width: 768px) {
+  .custom-zoom-controls {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .custom-zoom-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+  
+  .custom-brochure-viewer {
+    height: 300px;
+  }
+}
+</style>
+
+<script>
+// Sigurohuni që ky script është pas jQuery-së nëse përdorni jQuery
+document.addEventListener('DOMContentLoaded', function() {
+  // Kodi për hartën me lëvizje
+  const mapContainer = document.getElementById('map-container');
+  const mapImage = document.getElementById('map-image');
+  const zoomInBtn = document.getElementById('zoom-in');
+  const zoomOutBtn = document.getElementById('zoom-out');
+  const zoomResetBtn = document.getElementById('zoom-reset');
+  
+  let currentScale = 1;
+  let posX = 0;
+  let posY = 0;
+  let startX, startY, startPosX, startPosY;
+  let isDragging = false;
+  const scaleStep = 0.2;
+  const maxScale = 3;
+  const minScale = 0.5;
+  
+  function applyTransform() {
+    mapContainer.style.transform = `translate(${posX}px, ${posY}px) scale(${currentScale})`;
+  }
+  
+  // Zoom In
+  zoomInBtn.addEventListener('click', function() {
+    if (currentScale < maxScale) {
+      currentScale += scaleStep;
+      applyTransform();
+    }
+  });
+  
+  // Zoom Out
+  zoomOutBtn.addEventListener('click', function() {
+    if (currentScale > minScale) {
+      currentScale -= scaleStep;
+      const maxPos = (1 - currentScale) * mapImage.offsetWidth / 2;
+      posX = Math.max(-maxPos, Math.min(maxPos, posX));
+      posY = Math.max(-maxPos, Math.min(maxPos, posY));
+      applyTransform();
+    }
+  });
+  
+  // Reset Zoom
+  zoomResetBtn.addEventListener('click', function() {
+    currentScale = 1;
+    posX = 0;
+    posY = 0;
+    applyTransform();
+  });
+  
+  // Funksionet për drag (miut)
+  mapContainer.addEventListener('mousedown', startDrag);
+  document.addEventListener('mousemove', drag);
+  document.addEventListener('mouseup', endDrag);
+  
+  // Funksionet për touch (ekran prekës)
+  mapContainer.addEventListener('touchstart', handleTouchStart, { passive: false });
+  document.addEventListener('touchmove', handleTouchMove, { passive: true });
+  document.addEventListener('touchend', endDrag);
+  
+  function startDrag(e) {
+    if (currentScale > 1) {
+      isDragging = true;
+      const clientX = e.clientX || e.touches[0].clientX;
+      const clientY = e.clientY || e.touches[0].clientY;
+      
+      startX = clientX;
+      startY = clientY;
+      startPosX = posX;
+      startPosY = posY;
+      
+      if (e.cancelable) {
+        e.preventDefault();
+      }
+    }
+  }
+  
+  function handleTouchStart(e) {
+    if (currentScale > 1 && e.touches.length === 1) {
+      startDrag(e);
+    }
+  }
+  
+  function drag(e) {
+    if (isDragging) {
+      const clientX = e.clientX || e.touches[0].clientX;
+      const clientY = e.clientY || e.touches[0].clientY;
+      
+      const dx = clientX - startX;
+      const dy = clientY - startY;
+      
+      posX = startPosX + dx;
+      posY = startPosY + dy;
+      
+      const maxPos = (currentScale - 1) * mapImage.offsetWidth / 2;
+      posX = Math.max(-maxPos, Math.min(maxPos, posX));
+      posY = Math.max(-maxPos, Math.min(maxPos, posY));
+      
+      applyTransform();
+      
+      if (e.cancelable && isDragging) {
+        e.preventDefault();
+      }
+    }
+  }
+  
+  function handleTouchMove(e) {
+    if (isDragging && e.touches.length === 1) {
+      drag(e);
+    }
+  }
+  
+  function endDrag() {
+    isDragging = false;
+  }
+  
+  // Kodi për fletpalosjen
+  const images = [
+    document.getElementById('img1'),
+    document.getElementById('img2'),
+    document.getElementById('img3')
+  ];
+  const flipBtn = document.getElementById('flip-btn');
+  let currentImageIndex = 0;
+  
+  function showNextImage() {
+    images[currentImageIndex].classList.remove('active');
+    images[currentImageIndex].classList.add('inactive');
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    images[currentImageIndex].classList.remove('inactive');
+    images[currentImageIndex].classList.add('active');
+  }
+  
+  flipBtn.addEventListener('click', showNextImage);
+});
+</script>
+
+
+
+
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>Copyright © 2025 Ky projekt u realizuai nga nxënësit e klasës X-4</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/counter.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  </body>
+</html>
